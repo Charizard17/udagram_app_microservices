@@ -1,8 +1,8 @@
 
 
-/udagram-api/node_modules
-/udagram-api/aws-secret.yaml
-/udagram-frontend/node_modules
+/services/user-service/node_modules
+/services/feed-service/node_modules
+/services/frontend-service/node_modules
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
@@ -47,3 +47,4 @@ venv/
 !.elasticbeanstalk/*.global.yml
 
 /env
+/k8s
