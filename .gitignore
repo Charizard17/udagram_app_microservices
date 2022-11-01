@@ -47,4 +47,3 @@ venv/
 !.elasticbeanstalk/*.global.yml
 
 /env
-/k8s

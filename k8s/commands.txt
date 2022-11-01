@@ -1,0 +1,30 @@
+#environment variables
+kubectl apply -f ./k8s/aws-secret.yaml
+kubectl apply -f ./k8s/env-secret.yaml
+kubectl apply -f ./k8s/env-config.yaml
+
+#feed-service
+kubectl apply -f ./k8s/feed-service-deployment.yaml
+kubectl apply -f ./k8s/feed-service-service.yaml
+
+#frontend-service
+kubectl apply -f ./k8s/frontend-service-deployment.yaml
+kubectl apply -f ./k8s/frontend-service-service.yaml
+
+#user-service
+kubectl apply -f ./k8s/user-service-deployment.yaml
+kubectl apply -f ./k8s/user-service-service.yaml
+
+#reverseproxy-service
+kubectl apply -f ./k8s/reverseproxy-service-deployment.yaml
+kubectl apply -f ./k8s/reverseproxy-service-service.yaml
+
+#check pod status
+kubectl get deployments
+
+#pod details check
+kubectl describe pod $podname
+
+#others
+kubectl get svc
+kubectl logs podId

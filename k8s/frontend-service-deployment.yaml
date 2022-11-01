@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: frontend-service
+  name: frontend-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: frontend-service
+  template:
+    metadata:
+      labels:
+        run: frontend-service
+    spec:
+      containers:
+        - image: charizard117/frontend-service:v2
+          name: frontend-service
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: 64Mi
+              cpu: 250m
+            limits:
+              memory: 1024Mi
+              cpu: 500m
+      restartPolicy: Always
