@@ -15,7 +15,7 @@ spec:
         run: user-service
     spec:
       containers:
-        - image: charizard117/user-service:v2
+        - image: charizard117/user-service:v3
           name: user-service
           imagePullPolicy: Always
           ports:

@@ -15,7 +15,7 @@ spec:
         run: feed-service
     spec:
       containers:
-        - image: charizard117/feed-service:v2
+        - image: charizard117/feed-service:v3
           name: feed-service
           imagePullPolicy: Always
           ports:

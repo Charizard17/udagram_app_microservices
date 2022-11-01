@@ -15,7 +15,7 @@ spec:
         run: reverseproxy-service
     spec:
       containers:
-        - image: charizard117/reverseproxy-service:v2
+        - image: charizard117/reverseproxy-service:v3
           name: reverseproxy-service
           imagePullPolicy: Always
           resources:

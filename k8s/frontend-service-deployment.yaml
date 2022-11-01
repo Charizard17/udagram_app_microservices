@@ -15,7 +15,7 @@ spec:
         run: frontend-service
     spec:
       containers:
-        - image: charizard117/frontend-service:v2
+        - image: charizard117/frontend-service:v4
           name: frontend-service
           imagePullPolicy: Always
           ports:
