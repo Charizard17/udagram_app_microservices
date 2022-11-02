@@ -19,15 +19,15 @@ script:
   - docker build -t frontend-service ./services/frontend-service
   - docker build -t reverseproxy-service ./services/reverseproxy-service
   - docker build -t user-service ./services/user-service
-  - docker tag feed-service charizard117/feed-service:v3
-  - docker tag frontend-service charizard117/frontend-service:v6
-  - docker tag reverseproxy-service charizard117/reverseproxy-service:v3
-  - docker tag user-service charizard117/user-service:v3
+  - docker tag feed-service charizard117/feed-service:v4
+  - docker tag frontend-service charizard117/frontend-service:v9
+  - docker tag reverseproxy-service charizard117/reverseproxy-service:v4
+  - docker tag user-service charizard117/user-service:v4
 
 # Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push charizard117/feed-service:v3
-  - docker push charizard117/frontend-service:v6
-  - docker push charizard117/reverseproxy-service:v3
-  - docker push charizard117/user-service:v3
+  - docker push charizard117/feed-service:v4
+  - docker push charizard117/frontend-service:v9
+  - docker push charizard117/reverseproxy-service:v4
+  - docker push charizard117/user-service:v4
