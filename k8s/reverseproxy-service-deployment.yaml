@@ -8,14 +8,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      run: reverseproxy-service
+      service: reverseproxy-service
   template:
     metadata:
       labels:
-        run: reverseproxy-service
+        service: reverseproxy-service
     spec:
       containers:
-        - image: charizard117/reverseproxy-service:v3
+        - image: charizard117/reverseproxy-service:v7
           name: reverseproxy-service
           imagePullPolicy: Always
           resources:
@@ -23,7 +23,7 @@ spec:
               memory: "64Mi"
               cpu: "250m"
             limits:
-              memory: "1024Mi"
+              memory: "2048Mi"
               cpu: "500m"
           ports:
             - containerPort: 8080

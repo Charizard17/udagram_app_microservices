@@ -20,7 +20,7 @@ script:
   - docker build -t reverseproxy-service ./services/reverseproxy-service
   - docker build -t user-service ./services/user-service
   - docker tag feed-service charizard117/feed-service:v4
-  - docker tag frontend-service charizard117/frontend-service:v10
+  - docker tag frontend-service charizard117/frontend-service:v11
   - docker tag reverseproxy-service charizard117/reverseproxy-service:v7
   - docker tag user-service charizard117/user-service:v4
 
@@ -28,6 +28,6 @@ script:
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push charizard117/feed-service:v4
-  - docker push charizard117/frontend-service:v10
+  - docker push charizard117/frontend-service:v11
   - docker push charizard117/reverseproxy-service:v7
   - docker push charizard117/user-service:v4

@@ -8,14 +8,14 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      run: frontend-service
+      service: frontend-service
   template:
     metadata:
       labels:
-        run: frontend-service
+        service: frontend-service
     spec:
       containers:
-        - image: charizard117/frontend-service:v5
+        - image: charizard117/frontend-service:v10
           name: frontend-service
           imagePullPolicy: Always
           ports:

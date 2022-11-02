@@ -8,14 +8,14 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      run: user-service
+      service: user-service
   template:
     metadata:
       labels:
-        run: user-service
+        service: user-service
     spec:
       containers:
-        - image: charizard117/user-service:v3
+        - image: charizard117/user-service:v4
           name: user-service
           imagePullPolicy: Always
           resources:
@@ -25,6 +25,8 @@ spec:
             limits:
               memory: "2048Mi"
               cpu: "500m"
+          ports:
+            - containerPort: 8080
           env:
             - name: URL
               valueFrom:

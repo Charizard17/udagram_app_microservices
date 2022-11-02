@@ -19,12 +19,20 @@ kubectl apply -f ./k8s/user-service-service.yaml
 kubectl apply -f ./k8s/reverseproxy-service-deployment.yaml
 kubectl apply -f ./k8s/reverseproxy-service-service.yaml
 
-#check pod status
-kubectl get deployments
+#expose externap ip
+kubectl expose deployment frontend-service --type=LoadBalancer --name=publicfrontend
+kubectl expose deployment reverseproxy-service --type=LoadBalancer --name=publicreverseproxy
 
-#pod details check
-kubectl describe pod $podname
+#docker builds
+docker build -t charizard117/frontend-service:v11 ./services/frontend-service/
+docker push charizard117/frontend-service:v11
+
+#set new image
+kubectl set image deployment frontend-service frontend-service=charizard117/frontend-service:v11
+
 
 #others
+kubectl get deployments
 kubectl get svc
 kubectl logs podId
+kubectl describe pod $podname
