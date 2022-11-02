@@ -18,8 +18,6 @@ spec:
         - image: charizard117/feed-service:v3
           name: feed-service
           imagePullPolicy: Always
-          ports:
-            - containerPort: 80
           resources:
             requests:
               memory: "64Mi"

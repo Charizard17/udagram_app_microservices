@@ -19,7 +19,7 @@ services:
       AWS_PROFILE: $AWS_PROFILE
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
-      URL: "http://ae54a20fdd5c84175a9c0528083d7e47-1861523572.us-east-1.elb.amazonaws.com:8100"
+      URL: "http://a86ba6554ecdc4685b9931648285c66c-2121598503.us-east-1.elb.amazonaws.com:8100"
   feed-service:
     image: feed-service
     volumes:
@@ -33,8 +33,8 @@ services:
       AWS_PROFILE: $AWS_PROFILE
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
-      URL: "http://ae54a20fdd5c84175a9c0528083d7e47-1861523572.us-east-1.elb.amazonaws.com:8100"
+      URL: "http://a86ba6554ecdc4685b9931648285c66c-2121598503.us-east-1.elb.amazonaws.com:8100"
   frontend-service:
-    image: frontend-service:v4
+    image: frontend-service:v5
     ports:
       - "8100:80"

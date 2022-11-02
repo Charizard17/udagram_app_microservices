@@ -18,8 +18,6 @@ spec:
         - image: charizard117/user-service:v3
           name: user-service
           imagePullPolicy: Always
-          ports:
-            - containerPort: 80
           resources:
             requests:
               memory: "64Mi"
